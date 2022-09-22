@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd
+"
+>
+    
+ <!--standalone-->
+<!--    <util:list list-class="java.util.LinkedList" id="clothingBrand">
+        <value>Peter England</value>
+        <value>Raymond</value>
+        <value>Van hussen</value>
+        <value>Allen solly</value>
+    </util:list>-->
+<!--    <util:list list-class="java.util.Vector" id="clothingBrand">
+        <value>Peter England</value>
+        <value>Raymond</value>
+        <value>Van hussen</value>
+        <value>Allen solly</value>
+    </util:list>-->
+ 
+ <!--<standalone map-->
+<!--    <util:map map-class="java.util.HashMap" id="myPrice">
+        <entry key="formal" value="2000"/>
+        <entry key="casual" value="1000"/>
+        <entry key="traditional" value="3000"/>
+    </util:map>
+    <util:properties id="myProp">
+        <prop key="driver">com.mysql.jdbc.Driver</prop>
+        <prop key="url">mysql:jdbc://localhost:3306/database</prop>
+    </util:properties>
+    <bean class="com.spring.standalone.collection.Person" name="Cloth">
+        <property name="lothing" ref="clothingBrand"/>
+        <property name="price" ref="myPrice"/>
+        <property name="prop" ref="myProp"/>
+    </bean>-->
+   
+<!--    <context:annotation-config/>-->
+<!--     <bean class="com.spring.Student" name="student1">
+        <property name="studentId">
+            <value>3456</value>
+        </property>      
+        <property name="studentName">
+            <value>Munich</value>
+        </property>      
+        <property name="studentAddress">
+            <value>germany</value>
+        </property>      
+    </bean>-->
+    
+<!--    //ANOTHER way using value as a attribute
+    <bean class="com.spring.Student" name="student2">
+        <property name="studentId" value="45"/>
+        <property name="studentName" value="manish"/>
+        <property name="studentAddress" value="berlin"/>
+    </bean>
+    -->
+<!--    <bean class="com.spring.Student" name="student2" p:studentId="89" p:studentName="golu" p:studentAddress="haridwar"/>-->
+    
+<!--    //Collection practice-->
+<!--    <bean class="com.spring.collection.Emp" name="emp1">
+        <property name="name" value="Radhe"/>
+        <property name="phones" >
+            <list>
+                <value>68899</value>
+                <value>6899</value>
+                <value>6889</value>
+                <value>688909</value>
+                <null></null>
+            </list>
+        </property>        
+        <property name="addresses" >
+            <set>
+                <value>lucknow</value>
+                <value>indore</value>
+                <value>multai</value>
+                <value>varanasi</value>
+                <null></null>
+            </set>
+        </property>        
+        <property name="courses" >
+            <map>
+               <entry key="p" value="2months"/>
+               <entry key="java" value="3months"/>
+               <entry key="c" value="1months"/>
+            </map> 
+        </property>        
+    </bean>-->
+    
+  
+   
+<!--  //reference
+    <bean class="com.spring.ref.B" name="bref">
+    <property name="y" value="89"/>
+</bean>
+<bean class="com.spring.ref.A" name="aref">
+    <property name="a" value="12"/>
+    <property name="ob">
+        <ref bean="bref"/>
+    </property>
+    //refrence as a attribute
+    <property name="ob" ref="bref"/>
+</bean>
+As a schema
+<bean name="aref" class="com.spring.ref.A" p:a="4" p:ob-ref="bref"/>
+
+constructor injection
+    <bean name="cer" class="com.spring.cons.Certi" c:name="Learning Python">
+        <constructor-arg value="Learning Spring "/>
+    </bean>
+    <bean name="cons" class="com.spring.cons.cons" c:name="Hri" c:personId="90" c:certificate-ref="cer" c:list="{34,56,89,90}">
+        <constructor-arg value="Mukesh Ambani"/>
+        <constructor-arg value="13"/>
+        <constructor-arg ref="cer"/>
+        <bean name="cons" class="com.spring.cons.cons">
+             <constructor-arg value="Mukesh Ambani"/>
+        <constructor-arg value="13"/>
+        <constructor-arg ref="cer"/>
+        <constructor-arg name="list">
+            
+            <list>
+                <value>789</value>
+                <value>7847</value>
+                <value>784</value>
+                <value>79</value>
+            </list>
+        
+        </constructor-arg>
+       
+    </bean>
+    
+    <bean name="add" class="com.spring.cons.Adition">
+        <constructor-arg value="34" index="1"/>
+        <constructor-arg value="54" index="0" type="int"/>
+    </bean>
+ <bean name="jalebi" class="com.spring.lifecycle.Jalebi">
+        <property name="price">
+            <value>56.890</value>
+        </property>
+    </bean>-->
+<!--     <bean  class="com.spring.lifecycle.Jalebi" name="jalebi" init-method="init" destroy-method="destroy">
+        <property name="price">
+            <value>56.890</value>
+        </property>
+    </bean>-->
+<!--     <bean  class="com.spring.lifecycle.Pepsi" name="pepsi">
+        <property name="price">
+            <value>578.890</value>
+        </property>
+    </bean>-->
+    
+    
+     <!--Using annotations--> 
+<!--     <bean  class="com.spring.lifecycle.Example" name="example" p:subject="Chemistry">
+     
+    </bean>
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />-->
+    
+<!--AutoWiring using xml file-->
+<!-- <context:annotation-config/>
+    <bean class="com.spring.autowiring.annotation.Address" name="address1">
+        <property name="street" value="Mandle"/>
+        <property name="city" value="Indore"/>
+    </bean>
+   
+    <bean class="com.spring.autowiring.annotation.Address" name="address">
+        <property name="street" value="kasino"/>
+        <property name="city" value="NYC"/>
+    </bean>
+    auto wiring using xml having byName mode
+    <bean class="com.spring.autowiring.annotation.Emp" name="emp" />
+    
+    -->
+   <!--Stereotype Annotation-->
+   
+<!--   <context:component-scan base-package="com.spring.stereo.annotation"/>
+   <util:list list-class="java.util.LinkedList" id="temp">
+       <value>Lucknow</value>
+       <value>NYC</value>
+       <value>Florida</value>
+       <value>Luc</value>
+       <value>Luow</value>
+   </util:list>-->
+<!--   Bean scoping
+   singleton
+   prototype
+   session
+   request
+   globalSession
+   -->
+<!--<bean class="com.spring.stereo.annotation.beanPrototype" name="proto" scope="prototype">
+       <property name="beanScope" value="this is Prototype bean Scope" />
+   </bean>-->
+<!--    <bean class="com.spring.springExpression.Demo" name="exp">
+        
+    </bean>-->
+    <!--<context:component-scan base-package="com.spring.core.RemoveXml"/>-->
+</beans>
